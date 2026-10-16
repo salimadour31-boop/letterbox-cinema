@@ -1,0 +1,113 @@
+/* Styles originaux pour Letterbox Cinema */
+:root {
+  --bg: #111;
+  --fg: #eee;
+  --accent: #e6b800;
+  --panel: #222;
+}
+
+* { box-sizing: border-box; }
+
+body {
+  margin: 0;
+  font-family: system-ui, -apple-system, sans-serif;
+  background: var(--bg);
+  color: var(--fg);
+  line-height: 1.5;
+}
+
+header {
+  text-align: center;
+  padding: 1.5rem 1rem;
+  background: var(--panel);
+}
+
+h1 { margin: 0; font-size: 1.8rem; }
+
+.lang-switch {
+  margin-top: 0.5rem;
+}
+
+.lang-switch button {
+  background: #333;
+  color: #fff;
+  border: 1px solid #555;
+  padding: 0.3rem 0.8rem;
+  margin: 0 0.2rem;
+  cursor: pointer;
+}
+
+.lang-switch button:hover { background: var(--accent); color: #000; }
+
+main {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1.5rem;
+  padding: 1.5rem;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.controls {
+  flex: 1 1 300px;
+  background: var(--panel);
+  padding: 1.2rem;
+  border-radius: 8px;
+}
+
+.controls label {
+  display: block;
+  margin: 0.8rem 0 0.3rem;
+  font-weight: 600;
+}
+
+.controls input, .controls select, .controls button {
+  width: 100%;
+  padding: 0.6rem;
+  margin-bottom: 0.5rem;
+  border: 1px solid #444;
+  background: #333;
+  color: #fff;
+  border-radius: 4px;
+}
+
+.controls button {
+  background: var(--accent);
+  color: #000;
+  font-weight: bold;
+  cursor: pointer;
+  border: none;
+}
+
+.controls button:disabled {
+  opacity: 0.5;
+  cursor: not-allowed;
+}
+
+.preview {
+  flex: 2 1 400px;
+  background: #000;
+  border-radius: 8px;
+  overflow: hidden;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 300px;
+}
+
+canvas, video {
+  max-width: 100%;
+  max-height: 70vh;
+  display: block;
+}
+
+footer {
+  text-align: center;
+  padding: 1rem;
+  font-size: 0.9rem;
+  opacity: 0.7;
+}
+
+@media (max-width: 700px) {
+  main { flex-direction: column; }
+}
