@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Letterbox Cinema | Outil Cinématique</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <header>
+    <h1 data-i18n="title">Letterbox Cinema</h1>
+    <p data-i18n="subtitle">Ajoutez des barres letterbox ou rognez aux ratios cinématiques</p>
+    <div class="lang-switch">
+      <button onclick="setLang('fr')">FR</button>
+      <button onclick="setLang('en')">EN</button>
+      <button onclick="setLang('tzm')">TZM</button>
+    </div>
+  </header>
+
+  <main>
+    <section class="controls">
+      <label data-i18n="upload">Importer image ou vidéo</label>
+      <input type="file" id="fileInput" accept="image/*,video/*">
+
+      <label data-i18n="ratio">Ratio cinématique</label>
+      <select id="ratioSelect">
+        <option value="2.39">2.39:1 (Scope)</option>
+        <option value="1.85">1.85:1 (Flat)</option>
+        <option value="2.00">2.00:1</option>
+        <option value="1.78">16:9</option>
+        <option value="1.33">4:3</option>
+      </select>
+
+      <label data-i18n="mode">Mode</label>
+      <select id="modeSelect">
+        <option value="letterbox" data-i18n="letterbox">Letterbox (barres)</option>
+        <option value="crop" data-i18n="crop">Rogner</option>
+      </select>
+
+      <label data-i18n="barColor">Couleur des barres</label>
+      <input type="color" id="barColor" value="#000000">
+
+      <button id="applyBtn" data-i18n="apply">Appliquer</button>
+      <button id="downloadBtn" data-i18n="download" disabled>Télécharger</button>
+    </section>
+
+    <section class="preview">
+      <canvas id="previewCanvas"></canvas>
+      <video id="previewVideo" controls style="display:none;"></video>
+    </section>
+  </main>
+
+  <footer>
+    <p data-i18n="footer">Outil open source gratuit — Traitement local dans le navigateur</p>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+</html>
